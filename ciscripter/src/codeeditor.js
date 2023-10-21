@@ -9,6 +9,8 @@ import EditorC from "./codemirror/editorc";
 import { Link, Routes, Route } from "react-router-dom";
 
 const Codeeditor = () => {
+  const [selectedLanguage, setSelectedLanguage] = useState("Language");
+
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownButtonRef = useRef(null);
   const dropdownMenuRef = useRef(null);
@@ -51,46 +53,6 @@ const Codeeditor = () => {
             <div className="flex justify-between items-center py-2 px-3 border-b dark:border-gray-600">
               <div className="flex flex-wrap items-center  divide-gray-200 sm:divide-x dark:divide-gray-600">
                 <div className="flex items-center space-x-1 sm:pr-4">
-                  <button
-                    onClick={lockcode}
-                    type="button"
-                    className="p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke-width="1.5"
-                      stroke="currentColor"
-                      class="w-6 h-6"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"
-                      />
-                    </svg>
-                  </button>
-                  <button
-                    type="button"
-                    className="p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke-width="1.5"
-                      stroke="currentColor"
-                      class="w-6 h-6"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M15.666 3.888A2.25 2.25 0 0013.5 2.25h-3c-1.03 0-1.9.693-2.166 1.638m7.332 0c.055.194.084.4.084.612v0a.75.75 0 01-.75.75H9a.75.75 0 01-.75-.75v0c0-.212.03-.418.084-.612m7.332 0c.646.049 1.288.11 1.927.184 1.1.128 1.907 1.077 1.907 2.185V19.5a2.25 2.25 0 01-2.25 2.25H6.75A2.25 2.25 0 014.5 19.5V6.257c0-1.108.806-2.057 1.907-2.185a48.208 48.208 0 011.927-.184"
-                      />
-                    </svg>
-                  </button>
-
                   {/* Add more buttons as needed */}
                 </div>
                 <div className="flex flex-wrap items-center space-x-1 sm:pl-4">
@@ -103,7 +65,7 @@ const Codeeditor = () => {
                           className="inline-flex justify-center rounded-md w-full px-4 py-2 text-sm font-medium text-gray-200 bg-gray-600 border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-blue-500"
                           onClick={toggleDropdown}
                         >
-                          Language
+                          {selectedLanguage}
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="w-5 h-5 ml-2 -mr-1"
@@ -134,6 +96,7 @@ const Codeeditor = () => {
                               <a
                                 className="flex block rounded-md px-4 py-2 text-sm text-gray-200 hover:text-gray-700 hover:bg-gray-100 active:bg-blue-100 cursor-pointer"
                                 role="menuitem"
+                                onClick={() => setSelectedLanguage("C")}
                               >
                                 C
                               </a>
@@ -143,6 +106,7 @@ const Codeeditor = () => {
                               <a
                                 className="flex block rounded-md px-4 py-2 text-sm text-gray-200 hover:text-gray-700 hover:bg-gray-100 active.bg-blue-100 cursor-pointer"
                                 role="menuitem"
+                                onClick={() => setSelectedLanguage("C++")}
                               >
                                 C++
                               </a>
@@ -151,6 +115,7 @@ const Codeeditor = () => {
                               <a
                                 className="flex block rounded-md px-4 py-2 text-sm text-gray-200 hover:text-gray-700 hover:bg-gray-100 active.bg-blue-100 cursor-pointer"
                                 role="menuitem"
+                                onClick={() => setSelectedLanguage("Java")}
                               >
                                 Java
                               </a>
@@ -159,6 +124,9 @@ const Codeeditor = () => {
                               <a
                                 className="flex block rounded-md px-4 py-2 text-sm text-gray-200 hover:text-gray-700 hover:bg-gray-100 active.bg-blue-100 cursor-pointer"
                                 role="menuitem"
+                                onClick={() =>
+                                  setSelectedLanguage("JavaScript")
+                                }
                               >
                                 JavaScript
                               </a>
@@ -167,6 +135,7 @@ const Codeeditor = () => {
                               <a
                                 className="flex block rounded-md px-4 py-2 text-sm text-gray-200 hover:text-gray-700 hover:bg-gray-100 active.bg-blue-100 cursor-pointer"
                                 role="menuitem"
+                                onClick={() => setSelectedLanguage("Python")}
                               >
                                 Python
                               </a>
@@ -175,6 +144,7 @@ const Codeeditor = () => {
                               <a
                                 className="flex block rounded-md px-4 py-2 text-sm text-gray-200 hover:text-gray-700 hover:bg-gray-100 active.bg-blue-100 cursor-pointer"
                                 role="menuitem"
+                                onClick={() => setSelectedLanguage("Html")}
                               >
                                 Html
                               </a>
@@ -183,6 +153,7 @@ const Codeeditor = () => {
                               <a
                                 className="flex block rounded-md px-4 py-2 text-sm text-gray-200 hover:text-gray-700 hover:bg-gray-100 active.bg-blue-100 cursor-pointer"
                                 role="menuitem"
+                                onClick={() => setSelectedLanguage("CSS")}
                               >
                                 CSS
                               </a>
@@ -237,12 +208,6 @@ const Codeeditor = () => {
               </Routes>
             </div>
           </div>
-          <button
-            type="submit"
-            className="inline-flex items-center px-5 py-2.5 text-sm font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800"
-          >
-            Save Code
-          </button>
         </form>
       </div>
     </div>
