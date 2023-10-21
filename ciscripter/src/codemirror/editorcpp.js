@@ -4,7 +4,12 @@ import { cpp } from "@codemirror/lang-cpp";
 import Clipboard from "clipboard";
 export default function EditorCpp() {
   // State to store the code and whether it's locked or not
-  const [code, setCode] = useState(`cout << 'hello world!' << endl;
+  const [code, setCode] = useState(`#inclde <iostream>
+  using namespace std;
+  int main(){
+    cout << 'hello world!' << endl
+    return 0;
+  };
 `);
   const [isLocked, setIsLocked] = useState(true);
 

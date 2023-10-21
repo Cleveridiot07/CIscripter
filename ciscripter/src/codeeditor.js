@@ -68,7 +68,7 @@ const Codeeditor = () => {
                         <button
                           type="button"
                           ref={dropdownButtonRef}
-                          className="inline-flex justify-center rounded-md w-full px-4 py-2 text-sm font-medium text-gray-200 bg-gray-600 border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-blue-500"
+                          className="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-gray-200 bg-gray-600 border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-blue-500"
                           onClick={toggleDropdown}
                         >
                           {selectedLanguage}
@@ -100,7 +100,7 @@ const Codeeditor = () => {
                           >
                             <Link to="/">
                               <a
-                                className="flex block rounded-md px-4 py-2 text-sm text-gray-200 hover:text-gray-700 hover:bg-gray-100 active:bg-blue-100 cursor-pointer"
+                                className="flex  rounded-md px-4 py-2 text-sm text-gray-200 hover:text-gray-700 hover:bg-gray-100 active:bg-blue-100 cursor-pointer"
                                 role="menuitem"
                                 onClick={() => setSelectedLanguage("C")}
                               >
@@ -110,7 +110,7 @@ const Codeeditor = () => {
 
                             <Link to="/cpp">
                               <a
-                                className="flex block rounded-md px-4 py-2 text-sm text-gray-200 hover:text-gray-700 hover:bg-gray-100 active.bg-blue-100 cursor-pointer"
+                                className="flex  rounded-md px-4 py-2 text-sm text-gray-200 hover:text-gray-700 hover:bg-gray-100 active.bg-blue-100 cursor-pointer"
                                 role="menuitem"
                                 onClick={() => setSelectedLanguage("C++")}
                               >
@@ -119,7 +119,7 @@ const Codeeditor = () => {
                             </Link>
                             <Link to="/java">
                               <a
-                                className="flex block rounded-md px-4 py-2 text-sm text-gray-200 hover:text-gray-700 hover:bg-gray-100 active.bg-blue-100 cursor-pointer"
+                                className="flex  rounded-md px-4 py-2 text-sm text-gray-200 hover:text-gray-700 hover:bg-gray-100 active.bg-blue-100 cursor-pointer"
                                 role="menuitem"
                                 onClick={() => setSelectedLanguage("Java")}
                               >
@@ -128,7 +128,7 @@ const Codeeditor = () => {
                             </Link>
                             <Link to="/javascript">
                               <a
-                                className="flex block rounded-md px-4 py-2 text-sm text-gray-200 hover:text-gray-700 hover:bg-gray-100 active.bg-blue-100 cursor-pointer"
+                                className="flex  rounded-md px-4 py-2 text-sm text-gray-200 hover:text-gray-700 hover:bg-gray-100 active.bg-blue-100 cursor-pointer"
                                 role="menuitem"
                                 onClick={() =>
                                   setSelectedLanguage("JavaScript")
@@ -139,7 +139,7 @@ const Codeeditor = () => {
                             </Link>
                             <Link to="/python">
                               <a
-                                className="flex block rounded-md px-4 py-2 text-sm text-gray-200 hover:text-gray-700 hover:bg-gray-100 active.bg-blue-100 cursor-pointer"
+                                className="flex  rounded-md px-4 py-2 text-sm text-gray-200 hover:text-gray-700 hover:bg-gray-100 active.bg-blue-100 cursor-pointer"
                                 role="menuitem"
                                 onClick={() => setSelectedLanguage("Python")}
                               >
@@ -148,7 +148,7 @@ const Codeeditor = () => {
                             </Link>
                             <Link to="/html">
                               <a
-                                className="flex block rounded-md px-4 py-2 text-sm text-gray-200 hover:text-gray-700 hover:bg-gray-100 active.bg-blue-100 cursor-pointer"
+                                className="flex  rounded-md px-4 py-2 text-sm text-gray-200 hover:text-gray-700 hover:bg-gray-100 active.bg-blue-100 cursor-pointer"
                                 role="menuitem"
                                 onClick={() => setSelectedLanguage("Html")}
                               >
