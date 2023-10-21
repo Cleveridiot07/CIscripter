@@ -3,6 +3,7 @@ import CodeMirror from "@uiw/react-codemirror";
 import { python } from "@codemirror/lang-python";
 import Clipboard from "clipboard";
 export default function EditorPython() {
+  // State to store the code and whether it's locked or not
   const [code, setCode] = useState(`print('hello world!')
 `);
   const [isLocked, setIsLocked] = useState(true);

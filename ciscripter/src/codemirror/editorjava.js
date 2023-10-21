@@ -4,6 +4,7 @@ import { java } from "@codemirror/lang-java";
 import Clipboard from "clipboard";
 
 export default function EditorJava() {
+  // State to store the code and whether it's locked or not
   const [code, setCode] = useState(`class HelloWorld {
     public static void main(String[] args) {
         System.out.println('Hello, World!');
@@ -11,11 +12,13 @@ export default function EditorJava() {
   `);
   const [isLocked, setIsLocked] = useState(true);
 
+  // Function to handle code changes
   const onChange = React.useCallback((value, viewUpdate) => {
     console.log("value:", value);
     setCode(value);
   }, []);
 
+  // Function to handle copying code to clipboard
   const handleCopyClick = () => {
     const clipboard = new Clipboard(".copy-button", {
       text: () => code,
@@ -32,13 +35,16 @@ export default function EditorJava() {
     });
   };
 
+  // Function to toggle locking/unlocking the code
   const toggleLock = () => {
     setIsLocked(!isLocked);
   };
 
   return (
     <div>
+      {/* Buttons for copying and locking code */}
       <div className="buttons w-full h-10 bg-gray-700 rounded-md justify-around items-center">
+        {/* Button for copying code */}
         <button
           type="button"
           onClick={handleCopyClick}
@@ -60,6 +66,7 @@ export default function EditorJava() {
           </svg>
         </button>
 
+        {/* Button for locking/unlocking code */}
         <button
           onClick={toggleLock}
           type="button"
@@ -85,6 +92,8 @@ export default function EditorJava() {
           </svg>
         </button>
       </div>
+
+      {/* Code editor */}
       {isLocked ? (
         <CodeMirror
           value={code}
@@ -100,7 +109,6 @@ export default function EditorJava() {
           height="70vh"
           theme="dark"
           language="java"
-          onChange={!isLocked ? undefined : onChange}
           readOnly
           extensions={[java()]}
         />

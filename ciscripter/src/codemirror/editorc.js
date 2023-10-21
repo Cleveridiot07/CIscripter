@@ -4,6 +4,7 @@ import { cpp } from "@codemirror/lang-cpp";
 import Clipboard from "clipboard";
 
 export default function EditorC() {
+  // State to store the code and whether it's locked or not
   const [code, setCode] = useState(`#include <stdio.h>
   int main() {
       printf('Hello, World!');

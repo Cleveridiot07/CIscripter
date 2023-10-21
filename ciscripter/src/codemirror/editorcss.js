@@ -4,10 +4,12 @@ import { css } from "@codemirror/lang-css";
 import Clipboard from "clipboard";
 
 export default function EditorCSS() {
+  // State to store the code and whether it's locked or not
   const [code, setCode] = useState(`/* your css code here */
   `);
   const [isLocked, setIsLocked] = useState(true);
 
+  // function to handle copy change
   const handleCopyClick = () => {
     const clipboard = new Clipboard(".copy-button", {
       text: () => code,
@@ -23,7 +25,7 @@ export default function EditorCSS() {
       clipboard.destroy();
     });
   };
-
+  // function to handle lock
   const toggleLock = () => {
     setIsLocked(!isLocked);
   };

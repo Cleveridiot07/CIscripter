@@ -7,8 +7,16 @@ import Editorjava from "./codemirror/editorjava";
 import EditorCSS from "./codemirror/editorcss";
 import EditorC from "./codemirror/editorc";
 import { Link, Routes, Route } from "react-router-dom";
+import logo from "./background.jpg";
 
 const Codeeditor = () => {
+  const backgroundStyle = {
+    backgroundImage: `url(${logo})`,
+    backgroundSize: "cover", // You can customize these background properties
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center center",
+  };
+
   const [selectedLanguage, setSelectedLanguage] = useState("Language");
 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -19,9 +27,7 @@ const Codeeditor = () => {
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
-  const lockcode = () => {
-    console.log("code is locked");
-  };
+
   // Close the dropdown when clicking outside of it
   const handleClickOutside = (event) => {
     if (
@@ -46,14 +52,14 @@ const Codeeditor = () => {
     };
   }, [isDropdownOpen]);
   return (
-    <div className="editor min-w-[100vw] min-h-[100vh]  bg-slate-200">
+    <div className="editor min-w-[100vw] min-h-[100vh]" style={backgroundStyle}>
       <div className="max-w-6xl pt-2 mx-auto ">
         <form>
-          <div className="mb-4 w-full bg-gray-50 rounded-lg border border-gray-200 dark:bg-gray-700 dark:border-gray-600">
+          <div className="mb-4 w-full mt-10 shadow-md shadow-violet-200 bg-gray-50 rounded-lg border border-gray-200 dark:bg-gray-700 dark:border-gray-600">
             <div className="flex justify-between items-center py-2 px-3 border-b dark:border-gray-600">
               <div className="flex flex-wrap items-center  divide-gray-200 sm:divide-x dark:divide-gray-600">
-                <div className="flex items-center space-x-1 sm:pr-4">
-                  {/* Add more buttons as needed */}
+                <div className="flex items-center space-x-1 sm:pr-4 text-slate-100 font-extrabold">
+                  CIScripter
                 </div>
                 <div className="flex flex-wrap items-center space-x-1 sm:pl-4">
                   <div className="dropdowmed ">
@@ -151,7 +157,7 @@ const Codeeditor = () => {
                             </Link>
                             <Link to="/css">
                               <a
-                                className="flex block rounded-md px-4 py-2 text-sm text-gray-200 hover:text-gray-700 hover:bg-gray-100 active.bg-blue-100 cursor-pointer"
+                                className="flex rounded-md px-4 py-2 text-sm text-gray-200 hover:text-gray-700 hover:bg-gray-100 active.bg-blue-100 cursor-pointer"
                                 role="menuitem"
                                 onClick={() => setSelectedLanguage("CSS")}
                               >

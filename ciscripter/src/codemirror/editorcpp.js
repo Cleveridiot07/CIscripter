@@ -3,6 +3,7 @@ import CodeMirror from "@uiw/react-codemirror";
 import { cpp } from "@codemirror/lang-cpp";
 import Clipboard from "clipboard";
 export default function EditorCpp() {
+  // State to store the code and whether it's locked or not
   const [code, setCode] = useState(`cout << 'hello world!' << endl;
 `);
   const [isLocked, setIsLocked] = useState(true);

@@ -4,6 +4,7 @@ import { javascript } from "@codemirror/lang-javascript";
 import Clipboard from "clipboard";
 
 export default function Editorjava() {
+  // State to store the code and whether it's locked or not
   const [code, setCode] = useState(`console.log('hello world!');
 `);
   const [isLocked, setIsLocked] = useState(true);
