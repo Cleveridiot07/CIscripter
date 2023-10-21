@@ -1,8 +1,8 @@
 import React, { useState, useCallback } from "react";
 import CodeMirror from "@uiw/react-codemirror";
-import { cpp } from "@codemirror/lang-cpp";
+import { python } from "@codemirror/lang-python";
 
-export default function CodemirrorCpp() {
+export default function EditorPython() {
   const onChange = useCallback((value, viewUpdate) => {
     console.log("value:", value);
   }, []);
@@ -10,10 +10,10 @@ export default function CodemirrorCpp() {
   return (
     <div>
       <CodeMirror
-        value="cout << 'hello world!' << endl;"
-        height="200px"
+        value="print('hello world!')"
+        height="70vh"
         theme="dark"
-        extensions={[cpp()]}
+        extensions={[python()]}
         onChange={onChange}
       />
     </div>

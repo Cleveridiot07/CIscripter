@@ -1,23 +1,21 @@
 import "./App.css";
-import Codemirrorjs from "./codemirror/codemirrorjavascript";
-import CodemirrorCpp from "./codemirror/codemirrorcpp";
-import Codemirrorhtml from "./codemirror/codemirrorhtml";
-import CodemirrorPython from "./codemirror/codemirrorpython";
-import Codemirrorjava from "./codemirror/codemirrorjava";
-import CodemirrorCSS from "./codemirror/codemirrorcss";
-import CodemirrorC from "./codemirror/codemirrorc";
+import Codemirrorjs from "./codemirror/editorjavascript";
+import CodemirrorCpp from "./codemirror/editorcpp";
+import Codemirrorhtml from "./codemirror/editorhtml";
+import CodemirrorPython from "./codemirror/editorpython";
+import Codemirrorjava from "./codemirror/editorjava";
+import CodemirrorCSS from "./codemirror/editorcss";
+import CodemirrorC from "./codemirror/editorc";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Codeeditor from "./codeeditor";
 
 function App() {
   return (
-    <div className="App">
-      {/* <Codemirrorjs />
-      <CodemirrorCpp />
-      <CodemirrorPython />
-      <Codemirrorhtml /> */}
-      {/* <Codemirrorjava /> */}
-      {/* <CodemirrorCSS /> */}
-      <CodemirrorC />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Codeeditor />
+      </div>
+    </BrowserRouter>
   );
 }
 

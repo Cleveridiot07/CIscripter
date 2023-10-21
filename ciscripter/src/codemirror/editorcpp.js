@@ -2,7 +2,7 @@ import React, { useState, useCallback } from "react";
 import CodeMirror from "@uiw/react-codemirror";
 import { cpp } from "@codemirror/lang-cpp";
 
-export default function CodemirrorC() {
+export default function EditorCpp() {
   const onChange = useCallback((value, viewUpdate) => {
     console.log("value:", value);
   }, []);
@@ -10,12 +10,8 @@ export default function CodemirrorC() {
   return (
     <div>
       <CodeMirror
-        value="#include <stdio.h>
-int main() {
-    printf('Hello, World!');
-    return 0;
-}"
-        height="200px"
+        value="cout << 'hello world!' << endl;"
+        height="70vh"
         theme="dark"
         extensions={[cpp()]}
         onChange={onChange}

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import CodeMirror from "@uiw/react-codemirror";
 import { java } from "@codemirror/lang-java"; // Import the Java language mode
 
-export default function CodemirrorJava() {
+export default function EditorJava() {
   const onChange = React.useCallback((value, viewUpdate) => {
     console.log("value:", value);
   }, []);
@@ -15,7 +15,7 @@ export default function CodemirrorJava() {
         System.out.println('Hello, World!');
     }
 }"
-        height="200px"
+        height="70vh"
         theme="dark"
         language="java" // Set the language to "java"
         onChange={onChange}

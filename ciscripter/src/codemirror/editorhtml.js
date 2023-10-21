@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import CodeMirror from "@uiw/react-codemirror";
 import { javascript } from "@codemirror/lang-javascript";
 
-export default function Codemirrorhtml() {
+export default function Editorhtml() {
   const onChange = React.useCallback((value, viewUpdate) => {
     console.log("value:", value);
   }, []);
@@ -21,7 +21,7 @@ export default function Codemirrorhtml() {
   
 </body>
 </html>"
-        height="200px"
+        height="70vh"
         theme="dark"
         extensions={[javascript({ jsx: true })]}
         onChange={onChange}
